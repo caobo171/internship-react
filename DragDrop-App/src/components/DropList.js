@@ -11,7 +11,6 @@ class DropList extends React.Component {
   drop = e => {
     e.preventDefault();
     let id = e.dataTransfer.getData("id");
-    console.log(id);
     console.log(document.getElementById(id));
     console.log(document.getElementById(id));
     console.log(e.target);
@@ -63,7 +62,7 @@ class DropList extends React.Component {
   render() {
     return (
       <div className="card">
-        <h3 class="card__title">{this.props.title}</h3>
+        <h3 className="card__title">{this.props.title}</h3>
         <div
           className="drop-area"
           onDrop={this.drop}
@@ -81,7 +80,7 @@ class DropList extends React.Component {
             placeholder="title"
             onChange={this.onChangeHandle}
           />
-          <a onClick={this.addDropTask} class="btn">
+          <a onClick={this.addDropTask} className="btn">
             Add Task...
           </a>
         </div>

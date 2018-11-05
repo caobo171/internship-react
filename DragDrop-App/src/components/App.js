@@ -78,6 +78,20 @@ class App extends React.Component {
     return listDropAreaElement;
   };
 
+  allowDrop = e => {
+    e.preventDefault();
+  };
+  drop = e => {
+    console.log(e.target);
+    if (e.target.className == "container") {
+      let id = e.dataTransfer.getData("id");
+      let listTask = this.state.listTask.filter(task => task.id != id);
+      if (confirm("Are you sure to delete this task ?")) {
+        this.setState({ listTask: listTask });
+      }
+    }
+  };
+
   render() {
     return (
       <div className="container" onDrop={this.drop} onDragOver={this.allowDrop}>
@@ -88,16 +102,16 @@ class App extends React.Component {
             onChange={this.onChangeHandle}
           />
           <button type="submit">Add Another List</button> */}
-        <div class="row">
+        <div className="row">
           <input
             type="text"
-            class="text-input"
+            className="text-input"
             type="text"
             name="title"
             placeholder="title"
             onChange={this.onChangeHandle}
           />
-          <a class="btn" onClick={this.addDropList}>
+          <a className="btn" onClick={this.addDropList}>
             Add Another List
           </a>
         </div>
