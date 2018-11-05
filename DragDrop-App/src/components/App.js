@@ -1,5 +1,4 @@
 import React from "react";
-import DropTask from "./DropTask";
 import DropList from "./DropList";
 
 class App extends React.Component {
@@ -32,8 +31,7 @@ class App extends React.Component {
     this.setState(state);
   }
 
-  addDropList = e => {
-    e.preventDefault();
+  addDropList = () => {
     let listDropArea = this.state.listDropArea;
     listDropArea.push(this.state.title);
     this.setState({ listDropArea }, () => this.saveState());
@@ -82,16 +80,28 @@ class App extends React.Component {
 
   render() {
     return (
-      <div onDrop={this.drop} onDragOver={this.allowDrop}>
-        <form onSubmit={this.addDropList}>
-          <input
+      <div className="container" onDrop={this.drop} onDragOver={this.allowDrop}>
+        {/* <input
             type="text"
             name="title"
             placeholder="title"
             onChange={this.onChangeHandle}
           />
-          <button type="submit">Add Another List</button>
-        </form>
+          <button type="submit">Add Another List</button> */}
+        <div class="row">
+          <input
+            type="text"
+            class="text-input"
+            type="text"
+            name="title"
+            placeholder="title"
+            onChange={this.onChangeHandle}
+          />
+          <a class="btn" onClick={this.addDropList}>
+            Add Another List
+          </a>
+        </div>
+
         {this.generateListDropArea()}
       </div>
     );

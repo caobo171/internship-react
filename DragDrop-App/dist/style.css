@@ -1,5 +1,83 @@
-.drop-area {
+/* .drop-area {
   width: 350px;
   padding: 10px;
   border: 1px solid #aaaaaa;
+} */
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+.row {
+  width: 100%;
+  padding: 1.6rem;
+  margin: auto;
+}
+
+.card {
+  display: inline-block;
+  padding-top: 0;
+  font-size: 1.8rem;
+  font-weight: 100;
+  width: 25%;
+  margin: 1rem;
+  background-image: radial-gradient(rgb(20, 89, 240), blue);
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.308);
+}
+
+.card__title {
+  text-transform: uppercase;
+
+  background-image: linear-gradient(to right, #ffb900, #ff7730);
+  margin: 0;
+  padding: 1rem;
+  font-weight: 25;
+}
+
+.card__task {
+  margin-left: 1.5rem;
+  margin-top: 0.3rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  font-weight: 100;
+}
+.card__task:hover {
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.308);
+  /* padding: 1rem; */
+  cursor: pointer;
+  border-radius: 15%;
+  transform: translateX(-5px);
+}
+
+.card__form {
+  margin: 1rem;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin-left: 0;
+  font-size: 1.2rem;
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.308);
+  cursor: pointer;
+}
+
+.text-input {
+  margin: 0;
+  padding: 0.3rem;
 }

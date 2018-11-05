@@ -1,5 +1,4 @@
 import React from "react";
-import DropTask from "./DropTask";
 
 class DropList extends React.Component {
   constructor() {
@@ -34,6 +33,7 @@ class DropList extends React.Component {
       //dropListElement.push(<DropTask key={i} task={task} />);
       dropListElement.push(
         <div
+          className="card__task"
           id={task.id}
           key={task.id}
           draggable="true"
@@ -62,25 +62,29 @@ class DropList extends React.Component {
 
   render() {
     return (
-      <div>
-        <strong>{this.props.title}</strong>
+      <div className="card">
+        <h3 class="card__title">{this.props.title}</h3>
         <div
           className="drop-area"
           onDrop={this.drop}
           onDragOver={this.allowDrop}
         >
+          <div className="card__task" />
           {this.generateListDrop()}
         </div>
 
-        <form onSubmit={this.addDropTask}>
+        <div className="card__form">
           <input
             type="text"
             name="taskName"
+            className="text-input"
             placeholder="title"
             onChange={this.onChangeHandle}
           />
-          <button type="submit">Add Task...</button>
-        </form>
+          <a onClick={this.addDropTask} class="btn">
+            Add Task...
+          </a>
+        </div>
       </div>
     );
   }
