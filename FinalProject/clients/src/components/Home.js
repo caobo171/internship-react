@@ -15,7 +15,7 @@ class Home extends React.Component {
       <Subscribe to={[postContainer, auth]}>
         {(
           {
-            state: { postsToShow, showType, tags },
+            state: { postsToShow, showType, tags, loading },
             getPostsOnFeed,
             getGlobalPosts,
             setShowType,
@@ -23,7 +23,7 @@ class Home extends React.Component {
           },
           { state: { auth } }
         ) => {
-          if (postsToShow.length >= 1) {
+          if (!loading) {
             return (
               <div className="home-page">
                 <div className="banner">

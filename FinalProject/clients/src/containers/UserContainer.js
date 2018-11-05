@@ -11,7 +11,6 @@ class UserContainer extends Container {
       "http://localhost:5000/api/user/settings",
       data
     );
-    console.log(resData.data);
   };
 
   getUser = async id => {

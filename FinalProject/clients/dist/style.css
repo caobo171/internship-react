@@ -3,3 +3,6 @@
   text-align: center;
   margin-top: 15rem;
 }
+.sidebar {
+  cursor: pointer;
+}

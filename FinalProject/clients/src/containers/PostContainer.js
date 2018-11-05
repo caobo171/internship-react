@@ -7,7 +7,8 @@ class PostContainer extends Container {
     posts: [],
     showType: "global",
     postsToShow: [],
-    tags: []
+    tags: [],
+    loading: false
   };
   addPost = async (data, history) => {
     let resData = await axios.post("http://localhost:5000/api/post/", data);
@@ -17,11 +18,15 @@ class PostContainer extends Container {
   };
 
   getPostsFromDatabase = async () => {
+    this.setState({
+      loading: true
+    });
     let resData = await axios.get("http://localhost:5000/api/post");
     this.setState({
       posts: resData.data,
       showType: "global",
-      postsToShow: resData.data
+      postsToShow: resData.data,
+      loading: false
     });
   };
 
