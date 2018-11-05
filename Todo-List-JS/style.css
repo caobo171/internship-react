@@ -1,0 +1,89 @@
+.done {
+  text-decoration: line-through;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+  color: #a5a5da;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+.row {
+  width: 100%;
+  margin-top: 1rem;
+
+  background-image: linear-gradient(to right, red, blue);
+  padding: 0.5rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.349);
+  transition: all 0.5s;
+}
+
+.row:hover,
+.row:focus {
+  transform: translateX(-3px);
+}
+
+.part1 {
+  display: inline-block;
+  width: 70%;
+  float: left;
+}
+
+.part1__task {
+  display: inline-block;
+  width: 90%;
+  overflow: auto;
+}
+.part2 {
+  display: inline-block;
+  width: 30%;
+}
+
+.part2__delete {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.part2__select-box {
+  height: 90%;
+  width: 40%;
+  padding: 0.2rem;
+}
+
+.form {
+  display: block;
+  margin-top: 2rem;
+  margin-left: 10%;
+}
+.form__text-input {
+  height: 1.5rem;
+  width: 40%;
+  padding: 0.2rem;
+}
+
+.form__btn {
+  background-image: linear-gradient(to bottom right, #38ec38, rgb(98, 197, 5));
+  margin: 0;
+  height: 2rem;
+  padding: 0.5rem;
+  color: #666161;
+  cursor: pointer;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.308);
+  text-decoration: none;
+}
+
+.form__btn:hover,
+.form__btn:focus {
+  transform: translateY(-3px);
+}
+
+.form__btn:active {
+  transform: translateY(-1px);
+}
